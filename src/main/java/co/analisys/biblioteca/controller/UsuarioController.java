@@ -31,6 +31,7 @@ public class UsuarioController {
         description = "Permite cambiar el email del usuario"
     )
     @PutMapping("/{id}/email")
+    @PreAuthorize("hasRole('ROLE_USER)")
     public void cambiarEmail(
         @PathVariable String id,
         @RequestBody String nuevoEmail
